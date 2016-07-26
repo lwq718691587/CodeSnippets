@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>My gundongshitu</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//第一步 实例化数组
+    self.welcomeArray = @[@"0.jpg",@"1.jpg",@"2.jpg",@"3.jpg"];
+    //判断一下 数组中的数据是不是最新
+    
+    //实例化滚动视图
+    _scrollView = [[UIScrollView alloc] init];
+    _scrollView.frame = CGRectMake(0, 0, 320, 568);
+    _scrollView.backgroundColor = [UIColor whiteColor];
+    _scrollView.delegate = self;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = YES;//横
+    _scrollView.pagingEnabled = YES;
+    
+    
+    //设置滚动视图的滚动范围
+    _scrollView.contentSize = CGSizeMake(320* [self.welcomeArray count], 568);
+    
+    
+    //图片刷到滚动视图上
+    for (int i = 0; i &lt; [self.welcomeArray count]; i++)
+    {
+        //创建一个UIImageView的对象
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * 320, 0, 320, 568)];
+        imageView.image = [UIImage imageNamed:self.welcomeArray[i]];
+        //添加到滚动视图
+        [_scrollView addSubview:imageView];
+        //把滚动视图添加到 view
+        [self.view addSubview:_pageControl];
+    }
+    
+    [self.view addSubview:_scrollView];
+        //实例化 页面控制器
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(140, 500, 100, 20)];
+    //_pageControl.backgroundColor = [UIColor redColor];
+    //设置页面控制器上广告源中数据的条数(4)
+    _pageControl.numberOfPages = [self.welcomeArray count];
+    //设置当前页(默认页)
+    _pageControl.currentPage = 0;//第一页
+    //把页面控制器加载到视图上
+    [self.view addSubview:_pageControl];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C4C3647E-3FD5-494B-AC83-B769C1A89FD2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>My gundongshitu</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My gundongshitu</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybtnshadow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:titleArr[i]];
+        //设置字体
+        UIFont *baseFont = [UIFont appFontOfSize:AllSFyh(0, 22)];
+        [attrString addAttribute:NSFontAttributeName value:baseFont range:NSMakeRange(0, [titleArr[i] length])];//设置所有的字体
+        // 设置颜色
+        [attrString addAttribute:NSForegroundColorAttributeName
+                           value:HexColor(@"cc7a08")
+                           range:NSMakeRange(0, [titleArr[i] length])];
+        NSShadow * shadow = [[NSShadow alloc]init];
+        shadow.shadowColor = HexColor(@"958e6e");
+        shadow.shadowOffset = CGSizeMake(0, 2);
+        shadow.shadowBlurRadius = 5;
+        [attrString addAttribute:NSShadowAttributeName
+                           value:shadow
+                           range:NSMakeRange(0, [titleArr[i] length])];
+        [btn setAttributedTitle:attrString forState:UIControlStateNormal];
+        
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65A2D4D6-DBB8-4A53-A672-3CA891E50F68</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mybtnshadow</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybtnshadow</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

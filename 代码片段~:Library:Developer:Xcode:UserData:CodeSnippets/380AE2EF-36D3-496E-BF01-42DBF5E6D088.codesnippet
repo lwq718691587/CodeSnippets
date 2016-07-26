@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_attributedString</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>Preprocessor</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//同意字符串不同颜色大小1
+-(NSMutableAttributedString * )getAttributedStr:(NSString * )timeStr{
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:timeStr];
+    if ([timeStr containsString:@"秒"]) {
+        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:AppFontName size:SFactorheight(17)] range:NSMakeRange(0,1)];
+        [str addAttribute:NSForegroundColorAttributeName value:HexColor(@"53a5f2")  range:NSMakeRange(0,1)];
+        
+        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:AppFontName size:SFactorheight(17)] range:NSMakeRange(4,2)];
+        [str addAttribute:NSForegroundColorAttributeName value:HexColor(@"53a5f2")  range:NSMakeRange(4,2)];
+    }else if ([timeStr containsString:@"天"]){
+        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:AppFontName size:SFactorheight(17)] range:NSMakeRange(0,timeStr.length-1)];
+        [str addAttribute:NSForegroundColorAttributeName value:HexColor(@"53a5f2")  range:NSMakeRange(0,timeStr.length-1)];
+    }else{
+        [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:AppFontName size:SFactorheight(17)] range:NSMakeRange(0,1)];
+        [str addAttribute:NSForegroundColorAttributeName value:HexColor(@"53a5f2")  range:NSMakeRange(0,1)];
+    }
+    return str;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>380AE2EF-36D3-496E-BF01-42DBF5E6D088</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_attributedString</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>my_attributedString</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

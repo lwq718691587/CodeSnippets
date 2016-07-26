@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+        self.backgroundColor = [UIColor clearColor];
+        UIImageView * bgimageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 0, self.contentView.bounds.size.width-10, 22)];
+        bgimageView.image = [UIImage imageNamed:@"lotteryInfoDetail_whiteBacground@2x"];
+        [self.contentView addSubview:bgimageView];
+        
+        CGFloat width = self.contentView.bounds.size.width;
+        
+    }
+    return self;
+}
+-(void)showLotteryLastInfo{
+   
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>25F88A5C-768C-4841-807B-BD7F5FD48266</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cell的初始化和赋值方法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

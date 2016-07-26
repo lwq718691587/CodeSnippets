@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_bendi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> //通知类型
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeAlert;
+    types |= UIUserNotificationTypeSound;
+    //设置通知类型动画
+    UIUserNotificationSettings* mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    //注册本地通知
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    //设置时区
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    //设置推送的时间
+    NSDate* date = [NSDate date];
+    //设置通知发送的时间
+    localNotification.fireDate = date;
+    //设置通知内容
+    localNotification.alertBody = [NSString stringWithFormat:@"有新消息，共%ld未读",unreadCount];
+    //通知声音
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    //右上角的数字
+    localNotification.applicationIconBadgeNumber = unreadCount;
+    //自定义信息
+    NSDictionary* infoDict = [NSDictionary dictionaryWithObject:@"two" forKey:@"one"];
+    //设置自定义信息
+    localNotification.userInfo = infoDict;
+    //发送本地通知
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>251286F6-05FE-4433-B05C-62237E080B1D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_bendi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>本地推送设置</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

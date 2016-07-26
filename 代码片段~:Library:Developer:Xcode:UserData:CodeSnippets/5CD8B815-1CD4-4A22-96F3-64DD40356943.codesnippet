@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_selectView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)createsegButtonView
+{
+    CGFloat  wight = [UIScreen mainScreen].bounds.size.width;
+    self.segButtonView = [[LSSegButtonView alloc]initWithFrame:CGRectMake(0, 0, wight, 30)];
+    [_segButtonView setButtonTitleWithArray:[NSArray arrayWithObjects:@"已完场",@"直播中",@"未开赛",@"我的关注", nil]];
+    [_segButtonView addTarget:self action:@selector(changeLoginOption:) forControlEvents:UIControlEventValueChanged];
+    [_segButtonView setSelectedIndex:0];
+    [self.view addSubview:self.segButtonView];
+    
+}
+-(void)changeLoginOption:(LSSegButtonView *)sender
+{
+    if (sender.selectedIndex==0) {
+        self.view.backgroundColor = [UIColor redColor];
+    }
+    else if (sender.selectedIndex==1)
+    {
+      self.view.backgroundColor = [UIColor yellowColor];
+    }
+    else if (sender.selectedIndex==2)
+    {
+          self.view.backgroundColor = [UIColor blueColor];
+    }
+    else {
+        self.view.backgroundColor = [UIColor whiteColor];
+
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5CD8B815-1CD4-4A22-96F3-64DD40356943</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_selectView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>选择器</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

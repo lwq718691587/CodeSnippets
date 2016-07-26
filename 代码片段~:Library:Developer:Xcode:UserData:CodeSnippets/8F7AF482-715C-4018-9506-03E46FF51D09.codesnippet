@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>My_mjrefresh</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> MJRefreshNormalHeader* header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self update];
+    }]; 
+    [header setTitle:@"下拉开始刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开以进行刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"刷新中 ..." forState:MJRefreshStateRefreshing];
+    self.IntegralStoreTableView.header = header;
+    
+    self.IntegralStoreTableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [SVProgressHUD showErrorMessage:@"更多商品，敬请期待！"];
+        [self.IntegralStoreTableView.footer endRefreshing];
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8F7AF482-715C-4018-9506-03E46FF51D09</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>My_mjrefresh</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My_mjrefresh</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

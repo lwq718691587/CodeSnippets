@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>My_segmentControll</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CGFloat viewWidth = self.view.bounds.size.width;
+    UIImage *image = IMAGE_AT_APPDIR(@"segButton_n.png", NO);
+    UIImage *imageChange = IMAGE_AT_APPDIR(@"segButton_h.png", NO);
+    CGFloat segHeight = image.size.height+5;
+    CGFloat segX=10,segWidth = viewWidth-2*segX,segY=10;
+    UISegmentedControl *segmentControl = [[UISegmentedControl alloc]initWithItems:@[@"手机号登陆",@"用户名登陆"]];
+    [segmentControl setFrame:CGRectMake(segX, segY+44+20, segWidth, segHeight)];
+    [segmentControl setSegmentedControlStyle:UISegmentedControlStyleBar];
+    //设置segmentControl的样式
+    NSDictionary *att  = @{NSForegroundColorAttributeName: [UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:15]};
+    [segmentControl setTitleTextAttributes:att forState:UIControlStateNormal];
+    NSDictionary *selectedAtt  = @{NSForegroundColorAttributeName: [UIColor redColor],NSFontAttributeName:[UIFont systemFontOfSize:15]};
+    [segmentControl setTitleTextAttributes:selectedAtt forState:UIControlStateSelected];
+    [segmentControl setTintColor:[UIColor lightGrayColor]];
+    [segmentControl setBackgroundColor:[UIColor clearColor]];
+    [segmentControl setTintColor:[UIColor clearColor]];
+    [segmentControl setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [segmentControl setBackgroundImage:imageChange forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6E0DA957-C701-4012-9C26-A22E32D715D0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>My_segmentControll</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My_segmentControll</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

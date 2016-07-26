@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_xib_tableview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//更新tableView数据
+-(void)upDate
+{
+    [LSPublicRequest requestPick:^(id obj) {
+        self.pickLotteryArr = obj;
+        
+        [self.tableView reloadData];
+        [self.tableView headerEndRefreshing];
+    }];
+}
+//设置row的个数
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.pickLotteryArr.count;
+}
+//设置cell的内容
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString * cells = @"showLotteryTableViewCell";
+    PickLotteryTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cells];
+    if(!cell)
+    {
+        //不用注册 通过xib去加载自定义的Cell
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"showLotteryTableViewCell" owner:self options:Nil] lastObject];
+    }
+    pickLotteryModel * info = self.pickLotteryArr[indexPath.row];
+    cell.info = info;
+    [cell showInfo];
+    return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    pickLotteryModel *list = self.pickLotteryArr[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"aaaaa" sender:list];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+#pragma mark - Navigation
+
+//跳转页面传参 把点击的名单对象传递过去
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    if ([segue.identifier  isEqual: @"aaaaa"] )
+//    {
+//        TableViewController *vc = segue.destinationViewController;
+//        
+//        vc.info = sender;
+//        
+//    }
+    
+}
+/**
+ *  上拉刷新 和 下拉刷新
+ */
+-(void)setupRefresh
+{
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.tableView.headerRefreshingText = @"正在刷新，请稍后";
+    self.tableView.footerRefreshingText = @"正在刷新，请稍后";
+}
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    [self upDate];
+}
+
+- (void)footerRereshing
+{
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B8D2C212-63D4-49B7-9F8F-D9848AEEB291</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>xib的tableView方法集合</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>xib的tableView方法集合</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_gun</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)createBanner
+{
+    _bannerImageArr = [[NSMutableArray alloc] init];
+    self.bannerScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 63, ScreenWidth, 150)];
+    
+    self.bannerScrollView.bounces = NO;
+    self.bannerScrollView.pagingEnabled = YES;
+    self.bannerScrollView.alwaysBounceHorizontal=YES;
+    self.bannerScrollView.directionalLockEnabled=YES;
+    self.bannerScrollView.showsHorizontalScrollIndicator=NO;
+    self.bannerScrollView.clipsToBounds=YES;
+    float t_height = self.bannerScrollView.frame.size.height;
+    float t_width = self.bannerScrollView.frame.size.width;
+    self.bannerScrollView.contentSize = CGSizeMake(4 * t_width, t_height);
+    for (int i = 0; i &lt; 4; i++)
+    {
+        UIImageView *t_imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"提交申请"]];
+        t_imageView.frame = CGRectMake(i * t_width, 0, t_width, t_height);
+        [_bannerImageArr addObject:t_imageView];
+        [self.bannerScrollView addSubview:t_imageView];
+    }
+    [self.view addSubview:self.bannerScrollView];
+    //实例化 页面控制器
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(ScreenWidth/2-50, self.bannerScrollView.frame.size.height-20+63, 100, 20)];
+    //设置页面控制器上广告源中数据的条数(4)
+    _pageControl.numberOfPages = [self.bannerImageArr count];
+    //设置当前页(默认页)
+    _pageControl.currentPage = 0;//第一页
+    //把页面控制器加载到视图上
+    [self.view addSubview:_pageControl];
+
+}
+- (void)autoScroll
+{
+    NSInteger index = self.bannerScrollView.contentOffset.x / self.bannerScrollView.frame.size.width ;
+    index += 1 ;
+   
+    //当前在那一页
+    if (index&gt;3) {
+        index=0;
+    }
+     self.pageControl.currentPage = index;
+    [self.bannerScrollView setContentOffset:CGPointMake(self.bannerScrollView.frame.size.width * index, 0) animated:YES];
+    
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _bannerTimer=[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(autoScroll) userInfo:nil repeats:YES];
+    
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if (_bannerTimer&amp;&amp;[_bannerTimer isValid]) {
+        [_bannerTimer invalidate];
+        _bannerTimer=nil;
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>907154DC-471A-4D35-BBB0-5BD6DC5BAA1C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_gun</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>banner滚动师徒</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

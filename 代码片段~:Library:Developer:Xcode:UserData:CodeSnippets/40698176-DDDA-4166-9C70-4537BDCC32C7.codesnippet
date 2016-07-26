@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_wenjian</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.dataArr = [[NSArray alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:@"/Users/qushuai/Desktop/工作任务/lwq/NARUTO -ナルト-/NARUTO -ナルト-/LotteryIcon" error:nil]] ;
+    NSLog(@"%@",self.dataArr);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>40698176-DDDA-4166-9C70-4537BDCC32C7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>读取文件夹内所有文件名创建数组</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>读取文件夹内所有文件名创建数组</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

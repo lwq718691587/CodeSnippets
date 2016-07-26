@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myOrderArr</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSSortDescriptor *ordernumDesc = [NSSortDescriptor sortDescriptorWithKey:@"ordernum" ascending:YES];
+            NSArray *descs = [NSArray arrayWithObjects:ordernumDesc,nil];
+            NSMutableArray *orderAllplanArr = [NSMutableArray arrayWithArray:[allPlanArr sortedArrayUsingDescriptors:descs]];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BAE3D2B4-0B35-43A8-9540-BA0DD5B8BC9B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myOrderArr</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myOrderArr</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

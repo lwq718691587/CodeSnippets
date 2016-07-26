@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>My_label</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> UILabel * &lt;#CGFloat y#&gt; = [[UILabel alloc]initWithFrame:CGRectMake(&lt;#CGFloat y#&gt;, &lt;#CGFloat y#&gt;, &lt;#CGFloat width#&gt;, &lt;#CGFloat width#&gt;)];
+    [&lt;#CGFloat y#&gt; setTextAlignment:NSTextAlignmentCenter];
+  &lt;#CGFloat x#&gt;.text =@"&lt;#CGFloat x#&gt;";
+    &lt;#CGFloat y#&gt;.textColor = LSRGBA(&lt;#CGFloat width#&gt;, &lt;#CGFloat width#&gt;, &lt;#CGFloat width#&gt;, &lt;#CGFloat width#&gt;);
+    &lt;#CGFloat width#&gt;.font = [UIFont boldSystemFontOfSize:&lt;#(CGFloat)#&gt;];
+    [&lt;#CGFloat y#&gt; addSubview:&lt;#CGFloat y#&gt;];
+    [&lt;#CGFloat y#&gt; release];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>37C0E53F-88E8-4220-989A-56D501642FAE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>My_label</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My_label</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

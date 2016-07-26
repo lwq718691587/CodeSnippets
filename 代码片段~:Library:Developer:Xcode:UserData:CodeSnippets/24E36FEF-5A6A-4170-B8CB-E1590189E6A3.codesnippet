@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_refresh</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  上拉刷新 和 下拉刷新
+ */
+-(void)setupRefresh
+{
+    [self.lotteryHistoryTableView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
+    [self.lotteryHistoryTableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    // 设置文字(也可以不设置,默认的文字在MJRefreshConst中修改)
+    self.lotteryHistoryTableView.headerRefreshingText = @"正在刷新，请稍后";
+    self.lotteryHistoryTableView.footerRefreshingText = @"正在刷新，请稍后";
+}
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    [self upDate];
+}
+
+- (void)footerRereshing
+{
+    _pageCount++;
+    [LSPublicRequest requestShowLotteryHistory:^(id obj) {
+        
+        self.lotteryHistoryArr = [self.lotteryHistoryArr arrayByAddingObjectsFromArray:obj];
+        NSLog(@"%@",self.lotteryHistoryArr);
+        [self.lotteryHistoryTableView reloadData];
+        [self.lotteryHistoryTableView footerEndRefreshing];
+    } andName:self.showLotteryModel.name andpagesize:@"20" andhistoryCount:[NSString stringWithFormat:@"%lu",(unsigned long)_pageCount]];
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>24E36FEF-5A6A-4170-B8CB-E1590189E6A3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>my_refresh</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>上拉下拉刷新</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my_xib_cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  static NSString * cells = @"showLotteryTableViewCell";
+    showLotteryTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cells];
+    if(!cell)
+    {
+        //不用注册 通过xib去加载自定义的Cell
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"showLotteryTableViewCell" owner:self options:Nil] lastObject];
+    }
+    TShowLotteryModel * info = self.showLotteryArr[indexPath.row];
+    cell.info = info;
+    [cell showInfo];
+    return cell;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4AEC81C0-4020-4CF6-8ABA-77526794112F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>xib_cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>xib_cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

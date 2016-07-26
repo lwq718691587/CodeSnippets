@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myShadowPath</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>   UIBezierPath * shadowPath =[UIBezierPath bezierPathWithRoundedRect:CGRectMake(5, 0, self.registerBtn.width - 10, self.registerBtn.height) cornerRadius:SFactorheight(49/2)];
+    self.registerBtn.layer.masksToBounds = NO;
+    self.registerBtn.layer.shadowOffset = CGSizeMake(0, 5);
+    self.registerBtn.layer.shadowColor = AppColor.CGColor;
+    self.registerBtn.layer.shadowRadius = 3;
+    self.registerBtn.layer.shadowOpacity = 0.6;
+    self.registerBtn.layer.shadowPath = shadowPath.CGPath;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A37F24BC-44A8-4B06-B2A4-543BBB35793A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myShadowPath</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myShadowPath</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myDifferrntColorAndFont</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:AppFontName size:SFactorheight(17)] range:NSMakeRange(4,2)];
+        [str addAttribute:NSForegroundColorAttributeName value:HexColor(@"53a5f2")  range:NSMakeRange(4,2)];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D86741F9-4828-495B-A5E5-0BDB27218193</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myDifferrntColorAndFont</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myDifferrntColorAndFont</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
